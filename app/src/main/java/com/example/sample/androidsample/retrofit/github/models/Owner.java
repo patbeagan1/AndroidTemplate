@@ -2,6 +2,22 @@ package com.example.sample.androidsample.retrofit.github.models;
 
 public class Owner {
     private String login;
+    private int id;
+    private String avatar_url;
+    private String gravatar_id;
+    private String url;
+    private String html_url;
+    private String followers_url;
+    private String following_url;
+    private String gists_url;
+    private String starred_url;
+    private String subscriptions_url;
+    private String organizations_url;
+    private String repos_url;
+    private String events_url;
+    private String received_events_url;
+    private String type;
+    private boolean site_admin;
 
     public String getLogin() {
         return this.login;
@@ -11,8 +27,6 @@ public class Owner {
         this.login = login;
     }
 
-    private int id;
-
     public int getId() {
         return this.id;
     }
@@ -20,8 +34,6 @@ public class Owner {
     public void setId(int id) {
         this.id = id;
     }
-
-    private String avatar_url;
 
     public String getAvatarUrl() {
         return this.avatar_url;
@@ -31,8 +43,6 @@ public class Owner {
         this.avatar_url = avatar_url;
     }
 
-    private String gravatar_id;
-
     public String getGravatarId() {
         return this.gravatar_id;
     }
@@ -40,8 +50,6 @@ public class Owner {
     public void setGravatarId(String gravatar_id) {
         this.gravatar_id = gravatar_id;
     }
-
-    private String url;
 
     public String getUrl() {
         return this.url;
@@ -51,8 +59,6 @@ public class Owner {
         this.url = url;
     }
 
-    private String html_url;
-
     public String getHtmlUrl() {
         return this.html_url;
     }
@@ -60,8 +66,6 @@ public class Owner {
     public void setHtmlUrl(String html_url) {
         this.html_url = html_url;
     }
-
-    private String followers_url;
 
     public String getFollowersUrl() {
         return this.followers_url;
@@ -71,8 +75,6 @@ public class Owner {
         this.followers_url = followers_url;
     }
 
-    private String following_url;
-
     public String getFollowingUrl() {
         return this.following_url;
     }
@@ -80,8 +82,6 @@ public class Owner {
     public void setFollowingUrl(String following_url) {
         this.following_url = following_url;
     }
-
-    private String gists_url;
 
     public String getGistsUrl() {
         return this.gists_url;
@@ -91,8 +91,6 @@ public class Owner {
         this.gists_url = gists_url;
     }
 
-    private String starred_url;
-
     public String getStarredUrl() {
         return this.starred_url;
     }
@@ -100,8 +98,6 @@ public class Owner {
     public void setStarredUrl(String starred_url) {
         this.starred_url = starred_url;
     }
-
-    private String subscriptions_url;
 
     public String getSubscriptionsUrl() {
         return this.subscriptions_url;
@@ -111,8 +107,6 @@ public class Owner {
         this.subscriptions_url = subscriptions_url;
     }
 
-    private String organizations_url;
-
     public String getOrganizationsUrl() {
         return this.organizations_url;
     }
@@ -120,8 +114,6 @@ public class Owner {
     public void setOrganizationsUrl(String organizations_url) {
         this.organizations_url = organizations_url;
     }
-
-    private String repos_url;
 
     public String getReposUrl() {
         return this.repos_url;
@@ -131,8 +123,6 @@ public class Owner {
         this.repos_url = repos_url;
     }
 
-    private String events_url;
-
     public String getEventsUrl() {
         return this.events_url;
     }
@@ -140,8 +130,6 @@ public class Owner {
     public void setEventsUrl(String events_url) {
         this.events_url = events_url;
     }
-
-    private String received_events_url;
 
     public String getReceivedEventsUrl() {
         return this.received_events_url;
@@ -151,8 +139,6 @@ public class Owner {
         this.received_events_url = received_events_url;
     }
 
-    private String type;
-
     public String getType() {
         return this.type;
     }
@@ -160,8 +146,6 @@ public class Owner {
     public void setType(String type) {
         this.type = type;
     }
-
-    private boolean site_admin;
 
     public boolean getSiteAdmin() {
         return this.site_admin;

@@ -2,6 +2,9 @@ package com.example.sample.androidsample.retrofit.github.models;
 
 public class License {
     private String key;
+    private String name;
+    private String spdx_id;
+    private String url;
 
     public String getKey() {
         return this.key;
@@ -11,8 +14,6 @@ public class License {
         this.key = key;
     }
 
-    private String name;
-
     public String getName() {
         return this.name;
     }
@@ -21,8 +22,6 @@ public class License {
         this.name = name;
     }
 
-    private String spdx_id;
-
     public String getSpdxId() {
         return this.spdx_id;
     }
@@ -30,8 +29,6 @@ public class License {
     public void setSpdxId(String spdx_id) {
         this.spdx_id = spdx_id;
     }
-
-    private String url;
 
     public String getUrl() {
         return this.url;

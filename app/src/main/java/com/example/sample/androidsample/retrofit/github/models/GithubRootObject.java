@@ -2,8 +2,77 @@ package com.example.sample.androidsample.retrofit.github.models;
 
 import java.util.Date;
 
-public class RootObject {
+public class GithubRootObject {
     private int id;
+    private String name;
+    private String full_name;
+    private Owner owner;
+    private String html_url;
+    private String description;
+    private boolean fork;
+    private String url;
+    private String forks_url;
+    private String keys_url;
+    private String collaborators_url;
+    private String teams_url;
+    private String hooks_url;
+    private String issue_events_url;
+    private String events_url;
+    private String assignees_url;
+    private String branches_url;
+    private String tags_url;
+    private String blobs_url;
+    private String git_tags_url;
+    private String git_refs_url;
+    private String trees_url;
+    private String statuses_url;
+    private String languages_url;
+    private String stargazers_url;
+    private String contributors_url;
+    private String subscribers_url;
+    private String subscription_url;
+    private String commits_url;
+    private String git_commits_url;
+    private String comments_url;
+    private String issue_comment_url;
+    private String contents_url;
+    private String compare_url;
+    private String merges_url;
+    private String archive_url;
+    private String downloads_url;
+    private String issues_url;
+    private String pulls_url;
+    private String milestones_url;
+    private String notifications_url;
+    private String labels_url;
+    private String releases_url;
+    private String deployments_url;
+    private Date created_at;
+    private Date updated_at;
+    private Date pushed_at;
+    private String git_url;
+    private String ssh_url;
+    private String clone_url;
+    private String svn_url;
+    private String homepage;
+    private int size;
+    private int stargazers_count;
+    private int watchers_count;
+    private String language;
+    private boolean has_issues;
+    private boolean has_projects;
+    private boolean has_downloads;
+    private boolean has_wiki;
+    private boolean has_pages;
+    private int forks_count;
+    private Object mirror_url;
+    private boolean archived;
+    private int open_issues_count;
+    private License license;
+    private int forks;
+    private int open_issues;
+    private int watchers;
+    private String default_branch;
 
     public int getId() {
         return this.id;
@@ -13,8 +82,6 @@ public class RootObject {
         this.id = id;
     }
 
-    private String name;
-
     public String getName() {
         return this.name;
     }
@@ -22,8 +89,6 @@ public class RootObject {
     public void setName(String name) {
         this.name = name;
     }
-
-    private String full_name;
 
     public String getFullName() {
         return this.full_name;
@@ -33,8 +98,6 @@ public class RootObject {
         this.full_name = full_name;
     }
 
-    private Owner owner;
-
     public Owner getOwner() {
         return this.owner;
     }
@@ -42,8 +105,6 @@ public class RootObject {
     public void setOwner(Owner owner) {
         this.owner = owner;
     }
-
-    private String html_url;
 
     public String getHtmlUrl() {
         return this.html_url;
@@ -53,8 +114,6 @@ public class RootObject {
         this.html_url = html_url;
     }
 
-    private String description;
-
     public String getDescription() {
         return this.description;
     }
@@ -62,8 +121,6 @@ public class RootObject {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    private boolean fork;
 
     public boolean getFork() {
         return this.fork;
@@ -73,8 +130,6 @@ public class RootObject {
         this.fork = fork;
     }
 
-    private String url;
-
     public String getUrl() {
         return this.url;
     }
@@ -82,8 +137,6 @@ public class RootObject {
     public void setUrl(String url) {
         this.url = url;
     }
-
-    private String forks_url;
 
     public String getForksUrl() {
         return this.forks_url;
@@ -93,8 +146,6 @@ public class RootObject {
         this.forks_url = forks_url;
     }
 
-    private String keys_url;
-
     public String getKeysUrl() {
         return this.keys_url;
     }
@@ -102,8 +153,6 @@ public class RootObject {
     public void setKeysUrl(String keys_url) {
         this.keys_url = keys_url;
     }
-
-    private String collaborators_url;
 
     public String getCollaboratorsUrl() {
         return this.collaborators_url;
@@ -113,8 +162,6 @@ public class RootObject {
         this.collaborators_url = collaborators_url;
     }
 
-    private String teams_url;
-
     public String getTeamsUrl() {
         return this.teams_url;
     }
@@ -122,8 +169,6 @@ public class RootObject {
     public void setTeamsUrl(String teams_url) {
         this.teams_url = teams_url;
     }
-
-    private String hooks_url;
 
     public String getHooksUrl() {
         return this.hooks_url;
@@ -133,8 +178,6 @@ public class RootObject {
         this.hooks_url = hooks_url;
     }
 
-    private String issue_events_url;
-
     public String getIssueEventsUrl() {
         return this.issue_events_url;
     }
@@ -142,8 +185,6 @@ public class RootObject {
     public void setIssueEventsUrl(String issue_events_url) {
         this.issue_events_url = issue_events_url;
     }
-
-    private String events_url;
 
     public String getEventsUrl() {
         return this.events_url;
@@ -153,8 +194,6 @@ public class RootObject {
         this.events_url = events_url;
     }
 
-    private String assignees_url;
-
     public String getAssigneesUrl() {
         return this.assignees_url;
     }
@@ -162,8 +201,6 @@ public class RootObject {
     public void setAssigneesUrl(String assignees_url) {
         this.assignees_url = assignees_url;
     }
-
-    private String branches_url;
 
     public String getBranchesUrl() {
         return this.branches_url;
@@ -173,8 +210,6 @@ public class RootObject {
         this.branches_url = branches_url;
     }
 
-    private String tags_url;
-
     public String getTagsUrl() {
         return this.tags_url;
     }
@@ -182,8 +217,6 @@ public class RootObject {
     public void setTagsUrl(String tags_url) {
         this.tags_url = tags_url;
     }
-
-    private String blobs_url;
 
     public String getBlobsUrl() {
         return this.blobs_url;
@@ -193,8 +226,6 @@ public class RootObject {
         this.blobs_url = blobs_url;
     }
 
-    private String git_tags_url;
-
     public String getGitTagsUrl() {
         return this.git_tags_url;
     }
@@ -202,8 +233,6 @@ public class RootObject {
     public void setGitTagsUrl(String git_tags_url) {
         this.git_tags_url = git_tags_url;
     }
-
-    private String git_refs_url;
 
     public String getGitRefsUrl() {
         return this.git_refs_url;
@@ -213,8 +242,6 @@ public class RootObject {
         this.git_refs_url = git_refs_url;
     }
 
-    private String trees_url;
-
     public String getTreesUrl() {
         return this.trees_url;
     }
@@ -222,8 +249,6 @@ public class RootObject {
     public void setTreesUrl(String trees_url) {
         this.trees_url = trees_url;
     }
-
-    private String statuses_url;
 
     public String getStatusesUrl() {
         return this.statuses_url;
@@ -233,8 +258,6 @@ public class RootObject {
         this.statuses_url = statuses_url;
     }
 
-    private String languages_url;
-
     public String getLanguagesUrl() {
         return this.languages_url;
     }
@@ -242,8 +265,6 @@ public class RootObject {
     public void setLanguagesUrl(String languages_url) {
         this.languages_url = languages_url;
     }
-
-    private String stargazers_url;
 
     public String getStargazersUrl() {
         return this.stargazers_url;
@@ -253,8 +274,6 @@ public class RootObject {
         this.stargazers_url = stargazers_url;
     }
 
-    private String contributors_url;
-
     public String getContributorsUrl() {
         return this.contributors_url;
     }
@@ -262,8 +281,6 @@ public class RootObject {
     public void setContributorsUrl(String contributors_url) {
         this.contributors_url = contributors_url;
     }
-
-    private String subscribers_url;
 
     public String getSubscribersUrl() {
         return this.subscribers_url;
@@ -273,8 +290,6 @@ public class RootObject {
         this.subscribers_url = subscribers_url;
     }
 
-    private String subscription_url;
-
     public String getSubscriptionUrl() {
         return this.subscription_url;
     }
@@ -282,8 +297,6 @@ public class RootObject {
     public void setSubscriptionUrl(String subscription_url) {
         this.subscription_url = subscription_url;
     }
-
-    private String commits_url;
 
     public String getCommitsUrl() {
         return this.commits_url;
@@ -293,8 +306,6 @@ public class RootObject {
         this.commits_url = commits_url;
     }
 
-    private String git_commits_url;
-
     public String getGitCommitsUrl() {
         return this.git_commits_url;
     }
@@ -302,8 +313,6 @@ public class RootObject {
     public void setGitCommitsUrl(String git_commits_url) {
         this.git_commits_url = git_commits_url;
     }
-
-    private String comments_url;
 
     public String getCommentsUrl() {
         return this.comments_url;
@@ -313,8 +322,6 @@ public class RootObject {
         this.comments_url = comments_url;
     }
 
-    private String issue_comment_url;
-
     public String getIssueCommentUrl() {
         return this.issue_comment_url;
     }
@@ -322,8 +329,6 @@ public class RootObject {
     public void setIssueCommentUrl(String issue_comment_url) {
         this.issue_comment_url = issue_comment_url;
     }
-
-    private String contents_url;
 
     public String getContentsUrl() {
         return this.contents_url;
@@ -333,8 +338,6 @@ public class RootObject {
         this.contents_url = contents_url;
     }
 
-    private String compare_url;
-
     public String getCompareUrl() {
         return this.compare_url;
     }
@@ -342,8 +345,6 @@ public class RootObject {
     public void setCompareUrl(String compare_url) {
         this.compare_url = compare_url;
     }
-
-    private String merges_url;
 
     public String getMergesUrl() {
         return this.merges_url;
@@ -353,8 +354,6 @@ public class RootObject {
         this.merges_url = merges_url;
     }
 
-    private String archive_url;
-
     public String getArchiveUrl() {
         return this.archive_url;
     }
@@ -362,8 +361,6 @@ public class RootObject {
     public void setArchiveUrl(String archive_url) {
         this.archive_url = archive_url;
     }
-
-    private String downloads_url;
 
     public String getDownloadsUrl() {
         return this.downloads_url;
@@ -373,8 +370,6 @@ public class RootObject {
         this.downloads_url = downloads_url;
     }
 
-    private String issues_url;
-
     public String getIssuesUrl() {
         return this.issues_url;
     }
@@ -382,8 +377,6 @@ public class RootObject {
     public void setIssuesUrl(String issues_url) {
         this.issues_url = issues_url;
     }
-
-    private String pulls_url;
 
     public String getPullsUrl() {
         return this.pulls_url;
@@ -393,8 +386,6 @@ public class RootObject {
         this.pulls_url = pulls_url;
     }
 
-    private String milestones_url;
-
     public String getMilestonesUrl() {
         return this.milestones_url;
     }
@@ -402,8 +393,6 @@ public class RootObject {
     public void setMilestonesUrl(String milestones_url) {
         this.milestones_url = milestones_url;
     }
-
-    private String notifications_url;
 
     public String getNotificationsUrl() {
         return this.notifications_url;
@@ -413,8 +402,6 @@ public class RootObject {
         this.notifications_url = notifications_url;
     }
 
-    private String labels_url;
-
     public String getLabelsUrl() {
         return this.labels_url;
     }
@@ -422,8 +409,6 @@ public class RootObject {
     public void setLabelsUrl(String labels_url) {
         this.labels_url = labels_url;
     }
-
-    private String releases_url;
 
     public String getReleasesUrl() {
         return this.releases_url;
@@ -433,8 +418,6 @@ public class RootObject {
         this.releases_url = releases_url;
     }
 
-    private String deployments_url;
-
     public String getDeploymentsUrl() {
         return this.deployments_url;
     }
@@ -442,8 +425,6 @@ public class RootObject {
     public void setDeploymentsUrl(String deployments_url) {
         this.deployments_url = deployments_url;
     }
-
-    private Date created_at;
 
     public Date getCreatedAt() {
         return this.created_at;
@@ -453,8 +434,6 @@ public class RootObject {
         this.created_at = created_at;
     }
 
-    private Date updated_at;
-
     public Date getUpdatedAt() {
         return this.updated_at;
     }
@@ -462,8 +441,6 @@ public class RootObject {
     public void setUpdatedAt(Date updated_at) {
         this.updated_at = updated_at;
     }
-
-    private Date pushed_at;
 
     public Date getPushedAt() {
         return this.pushed_at;
@@ -473,8 +450,6 @@ public class RootObject {
         this.pushed_at = pushed_at;
     }
 
-    private String git_url;
-
     public String getGitUrl() {
         return this.git_url;
     }
@@ -482,8 +457,6 @@ public class RootObject {
     public void setGitUrl(String git_url) {
         this.git_url = git_url;
     }
-
-    private String ssh_url;
 
     public String getSshUrl() {
         return this.ssh_url;
@@ -493,8 +466,6 @@ public class RootObject {
         this.ssh_url = ssh_url;
     }
 
-    private String clone_url;
-
     public String getCloneUrl() {
         return this.clone_url;
     }
@@ -502,8 +473,6 @@ public class RootObject {
     public void setCloneUrl(String clone_url) {
         this.clone_url = clone_url;
     }
-
-    private String svn_url;
 
     public String getSvnUrl() {
         return this.svn_url;
@@ -513,8 +482,6 @@ public class RootObject {
         this.svn_url = svn_url;
     }
 
-    private String homepage;
-
     public String getHomepage() {
         return this.homepage;
     }
@@ -522,8 +489,6 @@ public class RootObject {
     public void setHomepage(String homepage) {
         this.homepage = homepage;
     }
-
-    private int size;
 
     public int getSize() {
         return this.size;
@@ -533,8 +498,6 @@ public class RootObject {
         this.size = size;
     }
 
-    private int stargazers_count;
-
     public int getStargazersCount() {
         return this.stargazers_count;
     }
@@ -542,8 +505,6 @@ public class RootObject {
     public void setStargazersCount(int stargazers_count) {
         this.stargazers_count = stargazers_count;
     }
-
-    private int watchers_count;
 
     public int getWatchersCount() {
         return this.watchers_count;
@@ -553,8 +514,6 @@ public class RootObject {
         this.watchers_count = watchers_count;
     }
 
-    private String language;
-
     public String getLanguage() {
         return this.language;
     }
@@ -562,8 +521,6 @@ public class RootObject {
     public void setLanguage(String language) {
         this.language = language;
     }
-
-    private boolean has_issues;
 
     public boolean getHasIssues() {
         return this.has_issues;
@@ -573,8 +530,6 @@ public class RootObject {
         this.has_issues = has_issues;
     }
 
-    private boolean has_projects;
-
     public boolean getHasProjects() {
         return this.has_projects;
     }
@@ -582,8 +537,6 @@ public class RootObject {
     public void setHasProjects(boolean has_projects) {
         this.has_projects = has_projects;
     }
-
-    private boolean has_downloads;
 
     public boolean getHasDownloads() {
         return this.has_downloads;
@@ -593,8 +546,6 @@ public class RootObject {
         this.has_downloads = has_downloads;
     }
 
-    private boolean has_wiki;
-
     public boolean getHasWiki() {
         return this.has_wiki;
     }
@@ -602,8 +553,6 @@ public class RootObject {
     public void setHasWiki(boolean has_wiki) {
         this.has_wiki = has_wiki;
     }
-
-    private boolean has_pages;
 
     public boolean getHasPages() {
         return this.has_pages;
@@ -613,8 +562,6 @@ public class RootObject {
         this.has_pages = has_pages;
     }
 
-    private int forks_count;
-
     public int getForksCount() {
         return this.forks_count;
     }
@@ -622,8 +569,6 @@ public class RootObject {
     public void setForksCount(int forks_count) {
         this.forks_count = forks_count;
     }
-
-    private Object mirror_url;
 
     public Object getMirrorUrl() {
         return this.mirror_url;
@@ -633,8 +578,6 @@ public class RootObject {
         this.mirror_url = mirror_url;
     }
 
-    private boolean archived;
-
     public boolean getArchived() {
         return this.archived;
     }
@@ -642,8 +585,6 @@ public class RootObject {
     public void setArchived(boolean archived) {
         this.archived = archived;
     }
-
-    private int open_issues_count;
 
     public int getOpenIssuesCount() {
         return this.open_issues_count;
@@ -653,8 +594,6 @@ public class RootObject {
         this.open_issues_count = open_issues_count;
     }
 
-    private License license;
-
     public License getLicense() {
         return this.license;
     }
@@ -662,8 +601,6 @@ public class RootObject {
     public void setLicense(License license) {
         this.license = license;
     }
-
-    private int forks;
 
     public int getForks() {
         return this.forks;
@@ -673,8 +610,6 @@ public class RootObject {
         this.forks = forks;
     }
 
-    private int open_issues;
-
     public int getOpenIssues() {
         return this.open_issues;
     }
@@ -683,8 +618,6 @@ public class RootObject {
         this.open_issues = open_issues;
     }
 
-    private int watchers;
-
     public int getWatchers() {
         return this.watchers;
     }
@@ -692,8 +625,6 @@ public class RootObject {
     public void setWatchers(int watchers) {
         this.watchers = watchers;
     }
-
-    private String default_branch;
 
     public String getDefaultBranch() {
         return this.default_branch;

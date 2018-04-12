@@ -1,21 +1,29 @@
 package com.example.sample.androidsample;
 
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.sample.androidsample.retrofit.github.GitHubAPI;
-import com.example.sample.androidsample.retrofit.github.GithubNetworkRequestTask;
-import com.example.sample.androidsample.retrofit.github.models.RootObject;
+import com.example.sample.androidsample.retrofit.RetrofitClient;
+import com.example.sample.androidsample.retrofit.github.models.GithubRootObject;
+import com.example.sample.androidsample.retrofit.pixabay.models.Hit;
+import com.example.sample.androidsample.retrofit.pixabay.models.PixabayRootObject;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.util.HashMap;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,61 +38,63 @@ public class MainActivity extends AppCompatActivity {
      * Check LogCat for the order in which these events occur.
      */
     private void initializeView() {
+        Fresco.initialize(this);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(
+        Button githubButton = findViewById(R.id.github_button);
+        Button pixabayButton = findViewById(R.id.pixabay_button);
+        githubButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        onFabButtonClicked();
+                        onGithubButtonClicked();
                     }
                 });
+        pixabayButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onPixabayButtonClicked();
+                    }
+                }
+        );
     }
 
     /**
      * This is set in the initializeView method.
      * It sends a network request to github which returns information about a single user.
      */
-    private void onFabButtonClicked() {
+    private void onGithubButtonClicked() {
 
         // Replace this hardcoded string with a text input, so we can ask for different
         // users without rebuilding.
         final String user = "patBeagan1";
-        new GithubNetworkRequestTask(
-                // A callback is something that you may not have seen before.
-                // It allows you to give an "action" to another method.
-                // Essentially, in this case it is saying:
-                //  Do the work in GithubNetworkRequestTask, then perform this action when you are done.
-                new GitHubAPI.ListReposCallBack() {
+
+        RetrofitClient
+                .getGithubService()
+                .listRepos(user)
+                .enqueue(new Callback<List<GithubRootObject>>() {
                     @Override
-                    public void performAction(Response<List<RootObject>> listResponse) {
-                        onNetworkRequestSucceeded(listResponse, user);
+                    public void onResponse(Call<List<GithubRootObject>> call, Response<List<GithubRootObject>> response) {
+                        onGithubListRepoResponseReceived(response.body(), user);
                     }
-                }
-        ).execute(user);
+
+                    @Override
+                    public void onFailure(Call<List<GithubRootObject>> call, Throwable t) {
+                        Log.e(MainActivity.class.getSimpleName(), "List repos call failed.", t);
+                    }
+                });
     }
 
-    /**
-     * This method is called when the network request has successfully succeeded.
-     * It is set up in the onFabButtonClicked() method.
-     * <p>
-     * It prints out the words "hello world", followed by a list of the user's repositories.
-     *
-     * @param listResponse The response object which was returned by retrofit after making a network request.
-     * @param user         The name of the user whose repositories we are attempting to retreive.
-     */
-    private void onNetworkRequestSucceeded(Response<List<RootObject>> listResponse, String user) {
-        List<RootObject> body = listResponse.body();
-
+    private void onGithubListRepoResponseReceived(List<GithubRootObject> body, String user) {
         // Stringbuilders are used when we want to put a lot of little strings together.
         // They make sure that we don't run out of memory while creating the final string!
         StringBuilder stringBuilder = new StringBuilder();
         if (body != null) {
-            for (RootObject rootObject : body) {
-                stringBuilder.append(rootObject.getFullName());
+            for (GithubRootObject githubRootObject : body) {
+                stringBuilder.append(githubRootObject.getFullName());
                 stringBuilder.append("\n");
             }
         }
@@ -99,6 +109,42 @@ public class MainActivity extends AppCompatActivity {
                 Toast.LENGTH_LONG
         ).show();
         // Always remember to call "show()" on toasts! Otherwise it stays invisible.
+    }
+
+    private void onPixabayButtonClicked() {
+
+        // Documentation can be found here: https://pixabay.com/api/docs/
+        HashMap<String, String> parameters = new HashMap<>();
+        parameters.put("q", "yellow+flowers");
+        parameters.put("key", "3968517-94dbe52e08b9ec52249a64fdc");
+        parameters.put("image_type", "all");
+        parameters.put("page", "1");
+
+        RetrofitClient
+                .getPixabayService()
+                .baseApiCall(parameters)
+                .enqueue(new Callback<PixabayRootObject>() {
+                    @Override
+                    public void onResponse(@NonNull Call<PixabayRootObject> call, @NonNull Response<PixabayRootObject> response) {
+                        PixabayRootObject body = response.body();
+                        List<Hit> hits;
+                        if (body != null) {
+                            hits = body.getHits();
+                            if (hits != null && hits.size() > 0) {
+                                String largeImageURL = hits.get(0).getLargeImageURL();
+                                Uri imageUri = Uri.parse(largeImageURL);
+                                SimpleDraweeView draweeView = findViewById(R.id.image);
+                                draweeView.setImageURI(imageUri);
+                                Log.d(TAG, "onResponse: Successfully set the image.");
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(@NonNull Call<PixabayRootObject> call, @NonNull Throwable t) {
+                        Log.d(TAG, "onFailure() called with: call = [" + call + "], t = [" + t + "]");
+                    }
+                });
     }
 
     //----------------------------------------------------------------------------------------------
