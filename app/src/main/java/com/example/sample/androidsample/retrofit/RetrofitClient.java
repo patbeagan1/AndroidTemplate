@@ -20,6 +20,7 @@ public class RetrofitClient {
 
     public static GitHubAPI getGithubService() {
         if (gitHubAPI == null) {
+            // Getting a client for https://api.github.com
             gitHubAPI = getClient("https://api.github.com").create(GitHubAPI.class);
         }
         return gitHubAPI;
@@ -27,7 +28,8 @@ public class RetrofitClient {
 
     public static PixabayAPI getPixabayService() {
         if (pixabayAPI == null) {
-            pixabayAPI = getClient("https://pixabay.com").create(PixabayAPI.class);
+            // Getting a client for https://pixabay.com
+            pixabayAPI = getClient("https://pbay.com").create(PixabayAPI.class);
         }
         return pixabayAPI;
     }

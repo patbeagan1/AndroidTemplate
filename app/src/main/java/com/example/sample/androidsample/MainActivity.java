@@ -127,11 +127,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(@NonNull Call<PixabayRootObject> call, @NonNull Response<PixabayRootObject> response) {
                         PixabayRootObject body = response.body();
-                        List<Hit> hits;
+                        List<Hit> hits = null;
                         if (body != null) {
+                            int size = hits.size();
                             hits = body.getHits();
-                            if (hits != null && hits.size() > 0) {
-                                String largeImageURL = hits.get(0).getLargeImageURL();
+                            if (hits != null && size > 0) {
+                                String largeImageURL = hits.get(size).getLargeImageURL();
                                 Uri imageUri = Uri.parse(largeImageURL);
                                 SimpleDraweeView draweeView = findViewById(R.id.image);
                                 draweeView.setImageURI(imageUri);
@@ -142,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(@NonNull Call<PixabayRootObject> call, @NonNull Throwable t) {
-                        Log.d(TAG, "onFailure() called with: call = [" + call + "], t = [" + t + "]");
+                        Log.e(TAG, "onFailure() called with: call = [" + call + "], t = [" + t + "]");
                     }
                 });
     }
