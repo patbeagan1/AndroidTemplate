@@ -43,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button githubButton = findViewById(R.id.github_button);
-        Button pixabayButton = findViewById(R.id.pixabay_button);
+        Button githubButton = findViewById(R.id.pixabay_button);
+        Button pixabayButton = findViewById(R.id.github_button);
+
         githubButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
