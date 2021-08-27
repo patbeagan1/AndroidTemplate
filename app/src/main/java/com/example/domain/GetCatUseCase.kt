@@ -17,13 +17,11 @@ class GetCatUseCase @Inject constructor(
     observeOn
 ) {
     class Params
-    sealed class Result {
-        data class Success(val cats: List<CatItemEntity>) : Result()
-    }
+    data class Result (val cats: List<CatItemEntity>)
 
     override fun mapEventToState(params: Params): Single<Result> =
         repository.getCats().flatMap {
-            Single.just(Result.Success(it))
+            Single.just(Result(it))
         }
 
     interface Repository {

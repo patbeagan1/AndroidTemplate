@@ -22,3 +22,26 @@ class GetDateUseCase @Inject constructor(
     data class Results(val dateItem: DateEntity)
 }
 
+class GetCatListDataUseCase @Inject constructor(
+    val getDateUseCase: GetDateUseCase,
+    val getCatUseCase: GetCatUseCase,
+    @ThreadMain val subscribeOn: Scheduler,
+    @ThreadIO val observeOn: Scheduler,
+    @DateNow val date: Date
+) : SingleUseCase<GetCatListDataUseCase.Param, GetCatListDataUseCase.Results>(
+    subscribeOn,
+    observeOn
+) {
+    override fun mapEventToState(params: Param): Single<Results> {
+        val cats: Single<GetCatUseCase.Result> = getCatUseCase.partial(GetCatUseCase.Params())
+        val date: Single<GetDateUseCase.Results> = getDateUseCase.partial(GetDateUseCase.Param())
+        return date.zipWith(cats) { a, b -> Results(a, b) }
+    }
+
+    class Param
+    data class Results(
+        val dateResults: GetDateUseCase.Results,
+        val catResults: GetCatUseCase.Result
+    )
+}
+

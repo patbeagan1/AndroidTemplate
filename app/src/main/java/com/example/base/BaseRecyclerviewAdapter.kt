@@ -1,6 +1,6 @@
 package com.example.base
 
-import com.example.presentation.ui.feature.adapter.ViewHolder
+import com.example.presentation.catlist.adapter.ViewHolder
 import com.example.util.safeLet
 
 

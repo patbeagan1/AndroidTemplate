@@ -8,6 +8,7 @@ import com.example.di.qualifiers.DateNow
 import com.example.di.qualifiers.ThreadIO
 import com.example.di.qualifiers.ThreadMain
 import com.example.domain.GetCatUseCase
+import com.example.presentation.catdetail.CatDetailViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,6 +34,10 @@ class Module {
 
     @Provides
     fun provideCatRepository(CatRepository: CatRepository): GetCatUseCase.Repository =
+        CatRepository
+
+    @Provides
+    fun provideCatDetailRepository(CatRepository: CatRepository): CatDetailViewModel.Repository =
         CatRepository
 
     @Provides

@@ -1,4 +1,4 @@
-package com.example.presentation.ui.feature
+package com.example.presentation.catlist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.ListAdapter
 import com.example.base.bind
 import com.example.databinding.ItemCatBinding
 import com.example.databinding.ItemDateBinding
-import com.example.presentation.ui.feature.CatRecyclerviewAdapter.ViewType.Cat
-import com.example.presentation.ui.feature.CatRecyclerviewAdapter.ViewType.Date
-import com.example.presentation.ui.feature.adapter.CatHolder
-import com.example.presentation.ui.feature.adapter.DateHolder
-import com.example.presentation.ui.feature.adapter.ViewHolder
-import com.example.presentation.ui.feature.adapter.EligibleForRecyclerView
+import com.example.presentation.catlist.CatRecyclerviewAdapter.ViewType.Cat
+import com.example.presentation.catlist.CatRecyclerviewAdapter.ViewType.Date
+import com.example.presentation.catlist.adapter.CatHolder
+import com.example.presentation.catlist.adapter.DateHolder
+import com.example.presentation.catlist.adapter.ViewHolder
+import com.example.presentation.catlist.adapter.EligibleForRecyclerView
 
 class CatRecyclerviewAdapter(
     val data: MutableList<EligibleForRecyclerView> = mutableListOf()

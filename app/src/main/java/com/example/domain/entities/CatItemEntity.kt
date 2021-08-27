@@ -1,9 +1,9 @@
 package com.example.domain.entities
 
-import android.net.Uri
+import java.net.URL
 
 data class CatItemEntity(
     val title: String,
     val headline: String,
-    val imageUri: Uri?,
+    val imageUri: URL,
 )

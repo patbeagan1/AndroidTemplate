@@ -1,4 +1,4 @@
-package com.example.presentation.ui.feature.adapter
+package com.example.presentation.catlist.adapter
 
 import android.net.Uri
 import coil.load

@@ -6,6 +6,16 @@
 
     <fragment
         android:id="@+id/catFragment"
-        android:name="com.example.presentation.ui.feature.CatFragment"
-        android:label="CatFragment" />
+        android:name="com.example.presentation.catlist.CatFragment"
+        android:label="CatFragment" >
+        <action
+            android:id="@+id/action_catFragment_to_catDetailFragment"
+            app:destination="@id/catDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/catDetailFragment"
+        android:name="com.example.presentation.catdetail.CatDetailFragment"
+        android:label="CatDetailFragment" />
 </navigation>

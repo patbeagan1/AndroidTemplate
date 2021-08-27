@@ -1,4 +1,4 @@
-package com.example.presentation.ui.feature.adapter
+package com.example.presentation.catlist.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
