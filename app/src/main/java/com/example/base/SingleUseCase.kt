@@ -3,20 +3,20 @@ package com.example.base
 import io.reactivex.Scheduler
 import io.reactivex.Single
 
-abstract class SingleUseCase<T, in Params> constructor(
+abstract class SingleUseCase<in INPUT, OUTPUT> constructor(
     private val subscribeOn: Scheduler,
     private val observeOn: Scheduler
 ) : UseCase() {
-    internal abstract fun buildUseCaseSingle(params: Params): Single<T>
+    internal abstract fun mapEventToState(params: INPUT): Single<OUTPUT>
 
     fun execute(
-        onSuccess: ((t: T) -> Unit),
+        onSuccess: ((t: OUTPUT) -> Unit),
         onError: ((t: Throwable) -> Unit),
         onFinished: (() -> Unit) = {},
-        params: Params,
+        params: INPUT,
     ) {
         disposeLast()
-        lastDisposable = buildUseCaseSingle(params)
+        lastDisposable = mapEventToState(params)
             .subscribeOn(subscribeOn)
             .observeOn(observeOn)
             .doAfterTerminate(onFinished)

@@ -3,10 +3,11 @@ package com.example.di
 import com.example.R
 import com.example.data.CatRepository
 import com.example.data.network.catapi.CatAPI
+import com.example.di.qualifiers.DateFormatDayMonth
+import com.example.di.qualifiers.DateNow
 import com.example.di.qualifiers.ThreadIO
 import com.example.di.qualifiers.ThreadMain
 import com.example.domain.GetCatUseCase
-import com.example.domain.entities.DateItem
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,6 +22,7 @@ import java.util.*
 @Module
 @InstallIn(FragmentComponent::class)
 class FragmentModule {
+    @DateFormatDayMonth
     @Provides
     fun providesSimpleDateFormat(): SimpleDateFormat = SimpleDateFormat("dd MMM")
 }
@@ -30,7 +32,7 @@ class FragmentModule {
 class Module {
 
     @Provides
-    fun provideCatRepository(CatRepository: CatRepository): GetCatUseCase.Contract.Repository =
+    fun provideCatRepository(CatRepository: CatRepository): GetCatUseCase.Repository =
         CatRepository
 
     @Provides
@@ -45,6 +47,7 @@ class Module {
     @Provides
     fun provideSchedulerMain(): Scheduler = AndroidSchedulers.mainThread()
 
+    @DateNow
     @Provides
-    fun provideDateItem(): DateItem = DateItem(Date())
+    fun provideDateNow(): Date = Date()
 }

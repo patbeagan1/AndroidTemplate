@@ -19,7 +19,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding true
+        dataBinding true
     }
 
     buildTypes {
@@ -62,12 +62,16 @@ dependencies {
     implementation lib.fragmentExtensions
     implementation lib.material
     implementation lib.coil
+    implementation lib.databindingRuntime
 
     testImplementation lib.testJunit
 
     implementation lib.rxAndroid
     implementation lib.rxKotlin
     implementation lib.hilt
+
+    implementation lib.navigationFragment
+    implementation lib.navigationUI
 
     kapt lib.hiltCompiler
     implementation lib.fragmentExtensions

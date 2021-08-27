@@ -2,7 +2,7 @@ package com.example.domain.entities
 
 import android.net.Uri
 
-data class CatItem(
+data class CatItemEntity(
     val title: String,
     val headline: String,
     val imageUri: Uri?,

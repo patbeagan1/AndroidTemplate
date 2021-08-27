@@ -45,6 +45,5 @@ interface CatAPI {
                     .let { chain.proceed(it) }
             }
             .build()
-
     }
 }
