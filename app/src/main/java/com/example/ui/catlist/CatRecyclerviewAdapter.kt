@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.databinding.ItemCatBinding
 import com.example.databinding.ItemDateBinding
-import com.example.ui.catlist.CatRecyclerviewAdapter.ViewType.Cat
-import com.example.ui.catlist.CatRecyclerviewAdapter.ViewType.Date
+import com.example.ui.catlist.ViewType.Cat
+import com.example.ui.catlist.ViewType.Date
 import com.example.ui.catlist.adapter.CatHolder
 import com.example.ui.catlist.adapter.DateHolder
 import com.example.ui.catlist.adapter.EligibleForRecyclerView
@@ -45,16 +45,17 @@ class CatRecyclerviewAdapter(
         }
     }
 
-    enum class ViewType(val id: Int) {
-        Cat(1),
-        Date(2);
+}
 
-        companion object {
-            operator fun get(viewType: Int): ViewType = values().first { it.id == viewType }
-            fun from(eligible: EligibleForRecyclerView) = when (eligible) {
-                is CatHolder.ViewModel -> Cat
-                is DateHolder.ViewModel -> Date
-            }
+private enum class ViewType(val id: Int) {
+    Cat(1),
+    Date(2);
+
+    companion object {
+        operator fun get(viewType: Int): ViewType = values().first { it.id == viewType }
+        fun from(eligible: EligibleForRecyclerView) = when (eligible) {
+            is CatHolder.ViewModel -> Cat
+            is DateHolder.ViewModel -> Date
         }
     }
 }
