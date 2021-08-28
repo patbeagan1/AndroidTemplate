@@ -12,7 +12,6 @@ import com.example.ui.catlist.adapter.CatHolder
 import com.example.ui.catlist.adapter.DateHolder
 import com.example.ui.catlist.adapter.EligibleForRecyclerView
 import com.example.ui.catlist.adapter.ViewHolder
-import com.example.util.bind
 
 class CatRecyclerviewAdapter(
     val data: MutableList<EligibleForRecyclerView> = mutableListOf()
@@ -41,8 +40,8 @@ class CatRecyclerviewAdapter(
     ) {
         val item = data[position]
         when (ViewType[holder.itemViewType]) {
-            Cat -> holder.bind<EligibleForRecyclerView, CatHolder.ViewModel, CatHolder>(item)
-            Date -> holder.bind<EligibleForRecyclerView, DateHolder.ViewModel, DateHolder>(item)
+            Cat -> (holder as CatHolder).bind(item as CatHolder.ViewModel)
+            Date -> (holder as DateHolder).bind(item as DateHolder.ViewModel)
         }
     }
 
