@@ -20,6 +20,12 @@ android {
 
     buildFeatures {
         dataBinding true
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.0.1"
+        // Remove kotlinCompilerVersion from here
     }
 
     buildTypes {
@@ -82,4 +88,13 @@ dependencies {
     implementation lib.rxbinding
     runtimeOnly lib.livedata
 
+    implementation lib.composeFoundation
+    implementation lib.composeLayout
+    implementation lib.composeMaterial
+    implementation lib.composeMaterialX
+    implementation lib.composeRuntime
+    implementation lib.composeRuntimeLivedata
+    implementation lib.composeTooling
+    implementation lib.composeUiUtil
+    implementation lib.composeViewBinding
 }

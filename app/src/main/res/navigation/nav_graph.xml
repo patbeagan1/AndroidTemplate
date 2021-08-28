@@ -13,9 +13,16 @@
             app:destination="@id/catDetailFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_catFragment_to_composeCatDetailFragment"
+            app:destination="@id/composeCatDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/catDetailFragment"
         android:name="com.example.ui.catdetail.CatDetailFragment"
         android:label="CatDetailFragment" />
+    <fragment
+        android:id="@+id/composeCatDetailFragment"
+        android:name="com.example.ui.catdetail.ComposeCatDetailFragment"
+        android:label="ComposeCatDetailFragment" />
 </navigation>
