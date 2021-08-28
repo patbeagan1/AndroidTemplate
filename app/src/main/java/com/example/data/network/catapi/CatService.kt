@@ -1,8 +1,6 @@
 package com.example.data.network.catapi
 
 import com.example.data.network.catapi.response.CatResponse
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import io.reactivex.Single
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -11,25 +9,25 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Query
 
-interface CatAPI {
+interface CatService {
 
     @GET("v1/images/search/")
-    fun getCats(
+    suspend fun getCats(
         @Header("pagination-count") paginationCount: Int = 2,
         @Query("size") size: String = "thumb",
         @Query("limit") limit: Int = 5,
-    ): Single<CatResponse>
+    ): CatResponse
 
     companion object {
         private const val BASE_URL = "https://api.thecatapi.com/"
 
-        fun create(apiKey: String): CatAPI = Retrofit.Builder()
+        fun create(apiKey: String): CatService = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(getClient(apiKey))
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(CatAPI::class.java)
+            .create(CatService::class.java)
 
         private fun getClient(apiKey: String) = OkHttpClient()
             .newBuilder()

@@ -1,4 +1,4 @@
-package com.example.presentation.catlist
+package com.example.ui.catlist
 
 import android.os.Bundle
 import android.view.LayoutInflater

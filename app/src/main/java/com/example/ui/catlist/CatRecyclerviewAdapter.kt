@@ -1,18 +1,18 @@
-package com.example.presentation.catlist
+package com.example.ui.catlist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.example.base.bind
 import com.example.databinding.ItemCatBinding
 import com.example.databinding.ItemDateBinding
-import com.example.presentation.catlist.CatRecyclerviewAdapter.ViewType.Cat
-import com.example.presentation.catlist.CatRecyclerviewAdapter.ViewType.Date
-import com.example.presentation.catlist.adapter.CatHolder
-import com.example.presentation.catlist.adapter.DateHolder
-import com.example.presentation.catlist.adapter.ViewHolder
-import com.example.presentation.catlist.adapter.EligibleForRecyclerView
+import com.example.ui.catlist.CatRecyclerviewAdapter.ViewType.Cat
+import com.example.ui.catlist.CatRecyclerviewAdapter.ViewType.Date
+import com.example.ui.catlist.adapter.CatHolder
+import com.example.ui.catlist.adapter.DateHolder
+import com.example.ui.catlist.adapter.EligibleForRecyclerView
+import com.example.ui.catlist.adapter.ViewHolder
+import com.example.util.bind
 
 class CatRecyclerviewAdapter(
     val data: MutableList<EligibleForRecyclerView> = mutableListOf()
@@ -41,8 +41,8 @@ class CatRecyclerviewAdapter(
     ) {
         val item = data[position]
         when (ViewType[holder.itemViewType]) {
-            Cat -> holder.bind<EligibleForRecyclerView, CatHolder.DataModel, CatHolder>(item)
-            Date -> holder.bind<EligibleForRecyclerView, DateHolder.DataModel, DateHolder>(item)
+            Cat -> holder.bind<EligibleForRecyclerView, CatHolder.ViewModel, CatHolder>(item)
+            Date -> holder.bind<EligibleForRecyclerView, DateHolder.ViewModel, DateHolder>(item)
         }
     }
 
@@ -53,8 +53,8 @@ class CatRecyclerviewAdapter(
         companion object {
             operator fun get(viewType: Int): ViewType = values().first { it.id == viewType }
             fun from(eligible: EligibleForRecyclerView) = when (eligible) {
-                is CatHolder.DataModel -> Cat
-                is DateHolder.DataModel -> Date
+                is CatHolder.ViewModel -> Cat
+                is DateHolder.ViewModel -> Date
             }
         }
     }

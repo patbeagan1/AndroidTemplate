@@ -1,7 +1,6 @@
-package com.example.base
+package com.example.util
 
-import com.example.presentation.catlist.adapter.ViewHolder
-import com.example.util.safeLet
+import com.example.ui.catlist.adapter.ViewHolder
 
 
 inline fun <reified ELIGIBLE, reified V : ELIGIBLE, reified U : ViewHolder<V>> ViewHolder<out ELIGIBLE>.bind(

@@ -1,14 +1,14 @@
 package com.example.di
 
 import com.example.R
-import com.example.data.CatRepository
-import com.example.data.network.catapi.CatAPI
+import com.example.data.network.catapi.CatService
+import com.example.data.repository.CatRepositoryImpl
 import com.example.di.qualifiers.DateFormatDayMonth
 import com.example.di.qualifiers.DateNow
 import com.example.di.qualifiers.ThreadIO
 import com.example.di.qualifiers.ThreadMain
 import com.example.domain.GetCatUseCase
-import com.example.presentation.catdetail.CatDetailViewModel
+import com.example.domain.GetSingleCatUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,16 +33,16 @@ class FragmentModule {
 class Module {
 
     @Provides
-    fun provideCatRepository(CatRepository: CatRepository): GetCatUseCase.Repository =
-        CatRepository
+    fun provideCatRepository(repository: CatRepositoryImpl): GetCatUseCase.Repository =
+        repository
 
     @Provides
-    fun provideCatDetailRepository(CatRepository: CatRepository): CatDetailViewModel.Repository =
-        CatRepository
+    fun provideSingleCatRepository(repository: CatRepositoryImpl): GetSingleCatUseCase.Repository =
+        repository
 
     @Provides
-    fun provideCatApi(resourcesHelper: ResourcesHelper): CatAPI =
-        CatAPI.create(resourcesHelper.getString(R.string.cat_api_key))
+    fun provideCatApi(resourcesHelper: ResourcesHelper): CatService =
+        CatService.create(resourcesHelper.getString(R.string.cat_api_key))
 
     @ThreadIO
     @Provides
