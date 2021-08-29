@@ -50,6 +50,8 @@ The file structure is set up like this
 ```
 
 ## References
+- ✨ https://www.youtube.com/watch?v=tYcqn48SMT8
+- ✨ https://www.youtube.com/watch?v=6BRlI5zfCCk
 - https://medium.com/androiddevelopers/coroutines-on-android-part-iii-real-work-2ba8a2ec2f45
 - https://github.com/android/architecture-components-samples/tree/main/LiveDataSample
 - https://developer.android.com/kotlin/coroutines
