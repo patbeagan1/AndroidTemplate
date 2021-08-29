@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.ui.catdetail.CatDetailViewModel.ViewState" />
+            type="com.patbeagan1.ui.catdetail.CatDetailViewModel.ViewState" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

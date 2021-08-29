@@ -32,6 +32,6 @@
 
         <variable
             name="viewModel"
-            type="com.example.ui.catlist.CatViewModel" />
+            type="com.patbeagan1.ui.catlist.CatViewModel" />
     </data>
 </layout>

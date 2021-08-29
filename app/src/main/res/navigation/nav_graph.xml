@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/catFragment"
-        android:name="com.example.ui.catlist.CatFragment"
+        android:name="com.patbeagan1.ui.catlist.CatFragment"
         android:label="CatFragment" >
         <action
             android:id="@+id/action_catFragment_to_catDetailFragment"
@@ -19,10 +19,10 @@
     </fragment>
     <fragment
         android:id="@+id/catDetailFragment"
-        android:name="com.example.ui.catdetail.CatDetailFragment"
+        android:name="com.patbeagan1.ui.catdetail.CatDetailFragment"
         android:label="CatDetailFragment" />
     <fragment
         android:id="@+id/composeCatDetailFragment"
-        android:name="com.example.ui.catdetail.ComposeCatDetailFragment"
+        android:name="com.patbeagan1.ui.catdetail.ComposeCatDetailFragment"
         android:label="ComposeCatDetailFragment" />
 </navigation>
