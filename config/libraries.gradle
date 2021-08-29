@@ -2,63 +2,60 @@ def version_coroutine = "1.5.1"
 def composeVersion = "1.0.1"
 
 ext.lib = [
-        appcompat               : 'androidx.appcompat:appcompat:1.3.1',
-        constraintlayout        : 'androidx.constraintlayout:constraintlayout:2.1.0',
-        coreKtx                 : 'androidx.core:core-ktx:1.6.0',
-        viewbinding             : 'androidx.databinding:viewbinding:7.0.1',
-        lifecycleViewModel      : 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1',
-        fragmentExtensions      : 'androidx.fragment:fragment-ktx:1.3.6',
-
-        material                : 'com.google.android.material:material:1.4.0',
-
-        kotlinStd               : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
-
-        // https://mvnrepository.com/artifact/io.reactivex.rxjava2
-        rxAndroid               : "io.reactivex.rxjava2:rxandroid:2.1.1",
-        rxKotlin                : "io.reactivex.rxjava2:rxkotlin:2.4.0",
-
-        coil                    : "io.coil-kt:coil:1.3.2",
-
-        gson                    : 'com.google.code.gson:gson:2.8.6',
-        retrofit                : "com.squareup.retrofit2:retrofit:2.9.0",
-        converter               : "com.squareup.retrofit2:converter-gson:2.9.0",
-        okhttp3                 : 'com.squareup.okhttp3:logging-interceptor:4.7.2',
-        adapter                 : 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0',
-
-        testJunit               : 'junit:junit:4.13.2',
-
-        databindingRuntime      : 'androidx.databinding:databinding-runtime:7.0.1',
-
-        coroutinesCore          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutine",
-        coroutinesAndroid       : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutine",
-        coroutinesTest          : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version_coroutine",
-
-        navigationFragment      : "androidx.navigation:navigation-fragment-ktx:2.3.5",
-        navigationUI            : "androidx.navigation:navigation-ui-ktx:2.3.5",
-
-        hilt                    : "com.google.dagger:hilt-android:2.38.1",
-        hiltCompiler            : "com.google.dagger:hilt-compiler:2.38.1",
-        hiltViewmodel           : 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02',
-
-        rxbinding               : 'com.jakewharton.rxbinding4:rxbinding:4.0.0',
-
-        // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-livedata
-        livedata                : 'androidx.lifecycle:lifecycle-livedata:2.3.1',
-
-        composeFoundation       : "androidx.compose.foundation:foundation:$composeVersion",
+        appcompat               : "androidx.appcompat:appcompat:1.3.1",
         composeLayout           : "androidx.compose.foundation:foundation-layout:$composeVersion",
-        composeMaterial         : "androidx.compose.material:material:$composeVersion",
+        composeFoundation       : "androidx.compose.foundation:foundation:$composeVersion",
         composeMaterialX        : "androidx.compose.material:material-icons-extended:$composeVersion",
-        composeRuntime          : "androidx.compose.runtime:runtime:$composeVersion",
+        composeMaterial         : "androidx.compose.material:material:$composeVersion",
         composeRuntimeLivedata  : "androidx.compose.runtime:runtime-livedata:$composeVersion",
-        composeTooling          : "androidx.compose.ui:ui-tooling:$composeVersion",
-        composeTest             : "androidx.compose.ui:ui-test:$composeVersion",
+        composeRuntime          : "androidx.compose.runtime:runtime:$composeVersion",
         composeUiTest           : "androidx.compose.ui:ui-test-junit4:$composeVersion",
         composeUiTestManifest   : "androidx.compose.ui:ui-test-manifest:$composeVersion",
+        composeTest             : "androidx.compose.ui:ui-test:$composeVersion",
+        composeTooling          : "androidx.compose.ui:ui-tooling:$composeVersion",
         composeUiUtil           : "androidx.compose.ui:ui-util:${composeVersion}",
         composeViewBinding      : "androidx.compose.ui:ui-viewbinding:$composeVersion",
 
-// Ignore
+        constraintlayout        : "androidx.constraintlayout:constraintlayout:2.1.0",
+        coreKtx                 : "androidx.core:core-ktx:1.6.0",
+        databindingRuntime      : "androidx.databinding:databinding-runtime:7.0.1",
+        viewbinding             : "androidx.databinding:viewbinding:7.0.1",
+        fragmentExtensions      : "androidx.fragment:fragment-ktx:1.3.6",
+        hiltViewmodel           : "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02",
+        legacySupport           : "androidx.legacy:legacy-support-v4:1.0.0",
+        lifecycleLivedata       : "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1",
+        livedata                : "androidx.lifecycle:lifecycle-livedata:2.3.1",
+        lifecycleViewModel      : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1",
+        lifecycleViewmodel      : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1",
+        navigationFragment      : "androidx.navigation:navigation-fragment-ktx:2.3.5",
+        navigationUI            : "androidx.navigation:navigation-ui-ktx:2.3.5",
+
+        material                : "com.google.android.material:material:1.4.0",
+        gson                    : "com.google.code.gson:gson:2.8.6",
+        hilt                    : "com.google.dagger:hilt-android:2.38.1",
+        hiltCompiler            : "com.google.dagger:hilt-compiler:2.38.1",
+
+        adapter                 : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0",
+        rxbinding               : "com.jakewharton.rxbinding4:rxbinding:4.0.0",
+
+        okhttp3                 : "com.squareup.okhttp3:logging-interceptor:4.7.2",
+        converter               : "com.squareup.retrofit2:converter-gson:2.9.0",
+        retrofit                : "com.squareup.retrofit2:retrofit:2.9.0",
+
+        coil                    : "io.coil-kt:coil:1.3.2",
+        coilCompose             : "io.coil-kt:coil-compose:1.3.2",
+
+        rxAndroid               : "io.reactivex.rxjava2:rxandroid:2.1.1",
+        rxKotlin                : "io.reactivex.rxjava2:rxkotlin:2.4.0",
+
+        testJunit               : "junit:junit:4.13.2",
+
+        kotlinStd               : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+        coroutinesAndroid       : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutine",
+        coroutinesCore          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutine",
+        coroutinesTest          : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version_coroutine",
+
+        // Ignore
         placeholderForFormatting: ""
 ]
 

@@ -25,7 +25,7 @@ class CatDetailViewModel @Inject constructor(
     val snackbar: LiveData<String> = _snackbar
 
     init {
-        viewModelScope.launch(Dispatchers.Default) {
+        viewModelScope.launch {
             try {
                 val result = getSingleCatUseCase.getSingleCat()
                 _viewState.postValue(

@@ -69,9 +69,12 @@ dependencies {
     implementation lib.material
     implementation lib.coil
     implementation lib.databindingRuntime
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation lib.legacySupport
+    implementation lib.lifecycleLivedata
+    implementation lib.lifecycleViewmodel
+
+    implementation("io.coil-kt:coil-compose:1.3.2")
+
 
     testImplementation lib.testJunit
 
