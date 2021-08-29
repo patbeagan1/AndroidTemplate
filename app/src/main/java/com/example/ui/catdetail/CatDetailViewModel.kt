@@ -9,7 +9,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.data.repository.INVALID_IMAGE
 import com.example.domain.GetSingleCatUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

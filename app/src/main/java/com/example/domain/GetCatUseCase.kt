@@ -1,6 +1,6 @@
 package com.example.domain
 
-import com.example.domain.entities.CatItemEntity
+import com.example.domain.entities.EntityCatItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -8,7 +8,7 @@ import javax.inject.Inject
 class GetCatUseCase @Inject constructor(
     private val repository: Repository,
 ) {
-    data class Result(val cats: List<CatItemEntity>)
+    data class Result(val cats: List<EntityCatItem>)
 
     suspend fun getCats(): Result = withContext(Dispatchers.IO) {
         Result(
@@ -17,7 +17,7 @@ class GetCatUseCase @Inject constructor(
     }
 
     interface Repository {
-        suspend fun getCats(): List<CatItemEntity>
+        suspend fun getCats(): List<EntityCatItem>
     }
 }
 

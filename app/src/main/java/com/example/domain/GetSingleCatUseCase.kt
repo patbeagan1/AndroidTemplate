@@ -1,6 +1,6 @@
 package com.example.domain
 
-import com.example.domain.entities.CatItemEntity
+import com.example.domain.entities.EntityCatItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -14,6 +14,6 @@ class GetSingleCatUseCase @Inject constructor(
     }
 
     interface Repository {
-        suspend fun getSingleCat(): CatItemEntity
+        suspend fun getSingleCat(): EntityCatItem
     }
 }

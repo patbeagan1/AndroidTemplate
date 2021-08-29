@@ -1,12 +1,11 @@
 package com.example.di
 
+import android.net.Uri
+import androidx.core.net.toUri
 import com.example.R
 import com.example.data.network.catapi.CatService
 import com.example.data.repository.CatRepositoryImpl
-import com.example.di.qualifiers.DateFormatDayMonth
-import com.example.di.qualifiers.DateNow
-import com.example.di.qualifiers.ThreadIO
-import com.example.di.qualifiers.ThreadMain
+import com.example.di.qualifiers.*
 import com.example.domain.GetCatUseCase
 import com.example.domain.GetSingleCatUseCase
 import dagger.Module
@@ -17,6 +16,7 @@ import dagger.hilt.android.components.ViewModelComponent
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.net.URL
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -55,4 +55,19 @@ class Module {
     @DateNow
     @Provides
     fun provideDateNow(): Date = Date()
+
+    @InvalidImage
+    @Provides
+    fun providesInvalidImageString(): String =
+        "https://bitsofco.de/content/images/2018/12/broken-1.png"
+
+    @InvalidImage
+    @Provides
+    fun providesInvalidImageUrl(@InvalidImage imageUrl: String): URL = URL(imageUrl)
+
+    @InvalidImage
+    @Provides
+    fun providesInvalidImageUri(@InvalidImage imageUrl: String): Uri =
+        URL(imageUrl).toString().toUri()
+
 }
