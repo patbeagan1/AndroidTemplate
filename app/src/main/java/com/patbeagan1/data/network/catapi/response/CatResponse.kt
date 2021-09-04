@@ -3,7 +3,6 @@ package com.patbeagan1.data.network.catapi.response
 import com.google.gson.annotations.SerializedName
 import java.util.ArrayList
 
-
 class CatResponse : ArrayList<CatItem>()
 
 data class CatItem(

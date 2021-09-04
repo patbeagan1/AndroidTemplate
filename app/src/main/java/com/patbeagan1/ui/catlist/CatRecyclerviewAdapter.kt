@@ -44,7 +44,6 @@ class CatRecyclerviewAdapter(
             Date -> (holder as DateHolder).bind(item as DateHolder.ViewModel)
         }
     }
-
 }
 
 private enum class ViewType(val id: Int) {
