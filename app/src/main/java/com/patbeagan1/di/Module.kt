@@ -1,8 +1,8 @@
 package com.patbeagan1.di
 
-//import io.reactivex.Scheduler
-//import io.reactivex.android.schedulers.AndroidSchedulers
-//import io.reactivex.schedulers.Schedulers
+// import io.reactivex.Scheduler
+// import io.reactivex.android.schedulers.AndroidSchedulers
+// import io.reactivex.schedulers.Schedulers
 import android.net.Uri
 import androidx.core.net.toUri
 import com.patbeagan1.R
@@ -71,5 +71,4 @@ class Module {
     @Provides
     fun providesInvalidImageUri(@InvalidImage imageUrl: String): Uri =
         URL(imageUrl).toString().toUri()
-
 }

@@ -13,4 +13,3 @@ class GetDateUseCase @Inject constructor(
 
     data class Results(val dateItem: EntityDate)
 }
-

@@ -20,4 +20,3 @@ class GetCatUseCase @Inject constructor(
         suspend fun getCats(): List<EntityCatItem>
     }
 }
-

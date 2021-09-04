@@ -30,9 +30,11 @@ interface CatService {
 
         private fun getClient(apiKey: String) = OkHttpClient()
             .newBuilder()
-            .addInterceptor(HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
-            })
+            .addInterceptor(
+                HttpLoggingInterceptor().apply {
+                    level = HttpLoggingInterceptor.Level.BODY
+                }
+            )
             .addInterceptor { chain ->
                 chain
                     .request()
