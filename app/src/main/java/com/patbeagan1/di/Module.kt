@@ -1,11 +1,16 @@
 package com.patbeagan1.di
 
+// import io.reactivex.Scheduler
+// import io.reactivex.android.schedulers.AndroidSchedulers
+// import io.reactivex.schedulers.Schedulers
 import android.net.Uri
 import androidx.core.net.toUri
 import com.patbeagan1.R
 import com.patbeagan1.data.network.catapi.CatService
 import com.patbeagan1.data.repository.CatRepositoryImpl
-import com.patbeagan1.di.qualifiers.*
+import com.patbeagan1.di.qualifiers.DateFormatDayMonth
+import com.patbeagan1.di.qualifiers.DateNow
+import com.patbeagan1.di.qualifiers.InvalidImage
 import com.patbeagan1.domain.GetCatUseCase
 import com.patbeagan1.domain.GetSingleCatUseCase
 import dagger.Module
@@ -13,9 +18,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.FragmentComponent
 import dagger.hilt.android.components.ViewModelComponent
-import io.reactivex.Scheduler
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import java.net.URL
 import java.text.SimpleDateFormat
 import java.util.*
@@ -44,13 +46,13 @@ class Module {
     fun provideCatApi(resourcesHelper: ResourcesHelper): CatService =
         CatService.create(resourcesHelper.getString(R.string.cat_api_key))
 
-    @ThreadIO
-    @Provides
-    fun provideSchedulerIo(): Scheduler = Schedulers.io()
-
-    @ThreadMain
-    @Provides
-    fun provideSchedulerMain(): Scheduler = AndroidSchedulers.mainThread()
+//    @ThreadIO
+//    @Provides
+//    fun provideSchedulerIo(): Scheduler = Schedulers.io()
+//
+//    @ThreadMain
+//    @Provides
+//    fun provideSchedulerMain(): Scheduler = AndroidSchedulers.mainThread()
 
     @DateNow
     @Provides
@@ -69,5 +71,4 @@ class Module {
     @Provides
     fun providesInvalidImageUri(@InvalidImage imageUrl: String): Uri =
         URL(imageUrl).toString().toUri()
-
 }

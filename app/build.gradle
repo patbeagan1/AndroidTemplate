@@ -78,8 +78,6 @@ dependencies {
 
     testImplementation lib.testJunit
 
-    implementation lib.rxAndroid
-    implementation lib.rxKotlin
     implementation lib.hilt
 
     implementation lib.navigationFragment
@@ -88,7 +86,6 @@ dependencies {
     kapt lib.hiltCompiler
     implementation lib.fragmentExtensions
     implementation libpack.retrofitAll
-    implementation lib.rxbinding
     runtimeOnly lib.livedata
 
     implementation lib.composeFoundation
@@ -100,4 +97,6 @@ dependencies {
     implementation lib.composeTooling
     implementation lib.composeUiUtil
     implementation lib.composeViewBinding
+
+    implementation lib.pagingRuntime
 }

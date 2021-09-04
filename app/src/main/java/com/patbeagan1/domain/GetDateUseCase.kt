@@ -9,9 +9,7 @@ class GetDateUseCase @Inject constructor(
     @DateNow val date: Date
 ) {
 
-    fun call(): Results = Results(EntityDate(date))
-
+    fun getDate(): Results = Results(EntityDate(date))
 
     data class Results(val dateItem: EntityDate)
 }
-

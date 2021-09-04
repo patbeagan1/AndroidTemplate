@@ -46,5 +46,3 @@ class CatDetailViewModel @Inject constructor(
         val catName: String = "Unknown"
     )
 }
-
-

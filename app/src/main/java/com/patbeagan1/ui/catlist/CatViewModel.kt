@@ -34,7 +34,7 @@ class CatViewModel @Inject constructor(
         _spinner.postValue(true)
         try {
             val mapEventToState = catListDataUseCase.getCats()
-            val call = dateUseCase.call()
+            val call = dateUseCase.getDate()
             var counter = 0
             val map = mapEventToState.cats.map { item ->
                 CatHolder.ViewModel(

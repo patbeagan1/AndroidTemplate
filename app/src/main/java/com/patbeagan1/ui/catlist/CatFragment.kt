@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.patbeagan1.R
 import com.patbeagan1.databinding.FragmentCatBinding
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -61,4 +61,3 @@ class CatFragment : Fragment() {
         catViewModel.getCats()
     }
 }
-
