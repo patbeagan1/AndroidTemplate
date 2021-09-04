@@ -4,7 +4,7 @@ import androidx.navigation.findNavController
 import com.patbeagan1.R
 import com.patbeagan1.databinding.ItemDateBinding
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
 import javax.inject.Inject
 
 class DateHolder(

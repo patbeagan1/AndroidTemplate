@@ -2,7 +2,7 @@ package com.patbeagan1.domain
 
 import com.patbeagan1.di.qualifiers.DateNow
 import com.patbeagan1.domain.entities.EntityDate
-import java.util.*
+import java.util.Date
 import javax.inject.Inject
 
 class GetDateUseCase @Inject constructor(

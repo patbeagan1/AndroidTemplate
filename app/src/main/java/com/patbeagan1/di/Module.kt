@@ -20,7 +20,7 @@ import dagger.hilt.android.components.FragmentComponent
 import dagger.hilt.android.components.ViewModelComponent
 import java.net.URL
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
 
 @Module
 @InstallIn(FragmentComponent::class)

@@ -1,7 +1,7 @@
 package com.patbeagan1.data.network.catapi.response
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
+import java.util.ArrayList
 
 class CatResponse : ArrayList<CatItem>()
 
