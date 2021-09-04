@@ -18,7 +18,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.net.URL
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
 
 @Module
 @InstallIn(FragmentComponent::class)
