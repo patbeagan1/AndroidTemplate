@@ -1,3 +1,5 @@
+[![ktlint](https://github.com/patbeagan1/AndroidSample/actions/workflows/ktlint.yml/badge.svg)](https://github.com/patbeagan1/AndroidSample/actions/workflows/ktlint.yml)
+
 # AndroidSample
 
 This repository is a learning area for the most recent Kotlin, Jetpack, Architecture and Compose updates.
