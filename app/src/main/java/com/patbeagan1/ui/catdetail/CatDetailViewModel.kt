@@ -9,8 +9,10 @@ import androidx.lifecycle.viewModelScope
 import com.patbeagan1.data.repository.INVALID_IMAGE
 import com.patbeagan1.domain.GetSingleCatUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.single
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class CatDetailViewModel @Inject constructor(
@@ -24,9 +26,9 @@ class CatDetailViewModel @Inject constructor(
     val snackbar: LiveData<String> = _snackbar
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             try {
-                val result = getSingleCatUseCase.getSingleCat()
+                val result = getSingleCatUseCase(GetSingleCatUseCase.Params()).single().data
                 _viewState.postValue(
                     viewState.value?.copy(
                         isLoading = false,

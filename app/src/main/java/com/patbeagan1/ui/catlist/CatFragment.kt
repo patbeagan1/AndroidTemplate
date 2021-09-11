@@ -40,9 +40,7 @@ class CatFragment : Fragment() {
         binding.viewModel = catViewModel
 
         catViewModel.recyclerItems.observe(viewLifecycleOwner) {
-            catRecyclerviewAdapter.data.clear()
-            catRecyclerviewAdapter.data.addAll(it)
-            catRecyclerviewAdapter.notifyDataSetChanged()
+            catRecyclerviewAdapter.submitList(it)
         }
 
         catViewModel.snackBar.observe(viewLifecycleOwner) {

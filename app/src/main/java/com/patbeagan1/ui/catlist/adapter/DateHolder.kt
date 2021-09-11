@@ -1,7 +1,6 @@
 package com.patbeagan1.ui.catlist.adapter
 
-import androidx.navigation.findNavController
-import com.patbeagan1.R
+import android.view.View
 import com.patbeagan1.databinding.ItemDateBinding
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -12,14 +11,13 @@ class DateHolder(
 ) : ViewHolder<DateHolder.ViewModel>(dateViewBinding.root) {
     override fun bind(item: ViewModel) {
         dateViewBinding.date.text = item.format()
-        dateViewBinding.root.setOnClickListener {
-            it.findNavController().navigate(R.id.action_catFragment_to_catDetailFragment)
-        }
+        dateViewBinding.root.setOnClickListener(item.onClick)
     }
 
     data class ViewModel @Inject constructor(
         private val date: Date,
-        override val id: Int
+        override val id: Int,
+        val onClick: (View) -> Unit
     ) : EligibleForRecyclerView {
         private val simpleDateFormat = SimpleDateFormat("dd MMM")
         fun format(): String = simpleDateFormat.format(date)
