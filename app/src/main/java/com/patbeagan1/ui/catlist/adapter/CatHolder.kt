@@ -1,9 +1,8 @@
 package com.patbeagan1.ui.catlist.adapter
 
 import android.net.Uri
-import androidx.navigation.findNavController
+import android.view.View
 import coil.load
-import com.patbeagan1.R
 import com.patbeagan1.databinding.ItemCatBinding
 
 class CatHolder(
@@ -13,15 +12,14 @@ class CatHolder(
         itemViewBinding.headline.text = item.headline
         itemViewBinding.title.text = item.title
         itemViewBinding.image.load(item.imageUri)
-        itemViewBinding.root.setOnClickListener {
-            it.findNavController().navigate(R.id.action_catFragment_to_composeCatDetailFragment)
-        }
+        itemViewBinding.root.setOnClickListener(item.onClick)
     }
 
-    data class ViewModel(
+    data class ViewModel constructor(
         val title: String,
         val headline: String,
         val imageUri: Uri?,
         override val id: Int,
+        val onClick: (View) -> Unit
     ) : EligibleForRecyclerView
 }

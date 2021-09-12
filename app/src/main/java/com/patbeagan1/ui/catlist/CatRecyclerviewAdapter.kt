@@ -55,6 +55,8 @@ private enum class ViewType(val id: Int) {
         fun from(eligible: EligibleForRecyclerView) = when (eligible) {
             is CatHolder.ViewModel -> Cat
             is DateHolder.ViewModel -> Date
+            // else is needed to get around a compiler bug
+            else -> Date
         }
     }
 }
