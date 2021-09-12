@@ -1,9 +1,7 @@
 package com.patbeagan1.ui.catdetail
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -51,7 +49,6 @@ class ComposeCatDetailFragment : ComposeFragment() {
             EmitImage(state)
         }
     }
-
 
     @Composable
     private fun EmitImage(state: CatDetailViewModel.ViewState?) {

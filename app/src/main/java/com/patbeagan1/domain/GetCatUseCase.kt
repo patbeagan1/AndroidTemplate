@@ -2,9 +2,9 @@ package com.patbeagan1.domain
 
 import com.patbeagan1.domain.base.ResultInteractor
 import com.patbeagan1.domain.entities.EntityCatItem
-import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 class GetCatUseCase @Inject constructor(
     private val repository: Repository,

@@ -1,10 +1,10 @@
 package com.patbeagan1.domain.base
 
-import java.util.concurrent.TimeUnit
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withTimeout
+import java.util.concurrent.TimeUnit
 
 sealed class InvokeStatus
 object InvokeStarted : InvokeStatus()
