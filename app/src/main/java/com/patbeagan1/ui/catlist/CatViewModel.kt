@@ -13,13 +13,13 @@ import com.patbeagan1.ui.catlist.adapter.CatHolder
 import com.patbeagan1.ui.catlist.adapter.DateHolder
 import com.patbeagan1.ui.catlist.adapter.EligibleForRecyclerView
 import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
 class CatViewModel @Inject constructor(
