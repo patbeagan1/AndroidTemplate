@@ -40,7 +40,10 @@ class CatFragment : Fragment() {
         binding.viewModel = catViewModel
 
         catViewModel.recyclerItems.observe(viewLifecycleOwner) {
-            catRecyclerviewAdapter.submitList(it)
+//            catRecyclerviewAdapter.submitList(it)
+            catRecyclerviewAdapter.data.clear()
+            catRecyclerviewAdapter.data.addAll(it)
+            catRecyclerviewAdapter.notifyDataSetChanged()
         }
 
         catViewModel.snackBar.observe(viewLifecycleOwner) {
@@ -48,7 +51,7 @@ class CatFragment : Fragment() {
         }
 
         catViewModel.spinner.observe(viewLifecycleOwner) {
-            binding.progressBar.visibility = if (it) View.VISIBLE else View.INVISIBLE
+            binding.progressBar.visibility = if (it == true) View.VISIBLE else View.INVISIBLE
         }
 
         return binding.root

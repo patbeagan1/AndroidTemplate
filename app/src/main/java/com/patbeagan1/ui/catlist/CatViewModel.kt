@@ -51,7 +51,8 @@ class CatViewModel @Inject constructor(
                         catItem.imageUri.toString().toUri(),
                         counter++
                     ) {
-                        it.findNavController().navigate(R.id.action_catFragment_to_composeCatDetailFragment)
+                        it.findNavController()
+                            .navigate(R.id.action_catFragment_to_composeCatDetailFragment)
                     }
                 }
             }
@@ -62,7 +63,8 @@ class CatViewModel @Inject constructor(
                         results.dateItem.date,
                         counter++
                     ) {
-                        it.findNavController().navigate(R.id.action_catFragment_to_catDetailFragment)
+                        it.findNavController()
+                            .navigate(R.id.action_catFragment_to_catDetailFragment)
                     }
                 )
             }
