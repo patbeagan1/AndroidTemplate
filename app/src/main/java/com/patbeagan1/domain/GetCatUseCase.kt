@@ -13,9 +13,7 @@ class GetCatUseCase @Inject constructor(
     data class Result(val cats: List<EntityCatItem>)
 
     override suspend fun doWork(params: Params): Result = withContext(Dispatchers.IO) {
-        Result(
-            repository.getCats()
-        )
+        Result(repository.getCats())
     }
 
     interface Repository {

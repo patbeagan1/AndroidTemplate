@@ -14,6 +14,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.viewModels
 import coil.compose.rememberImagePainter
@@ -44,18 +45,29 @@ class ComposeCatDetailFragment : ComposeFragment() {
                 .padding(4.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
             Text(text = "Hello world. ${state?.catName}")
-            EmitImage(state)
+            CatImage(state)
         }
     }
 
     @Composable
-    private fun EmitImage(state: CatDetailViewModel.ViewState?) {
+    private fun CatImage(state: CatDetailViewModel.ViewState?) {
         Image(
             painter = rememberImagePainter(state?.catPhoto.toString()),
             contentDescription = "Photo of a cat",
             modifier = Modifier.fillMaxWidth()
+        )
+    }
+
+    @Preview
+    @Composable
+    private fun HelloWorld() {
+        Text(
+            (0..10).fold("") { acc, _ -> acc + "Hello world" },
+            Modifier
+                .background(Color.Magenta)
+                .padding(14.dp),
+            Color(0.9F, 0.9F, 0.9F),
         )
     }
 }

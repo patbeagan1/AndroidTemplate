@@ -1,6 +1,7 @@
 package com.patbeagan1.data.repository
 
 import com.patbeagan1.data.network.catapi.CatService
+import com.patbeagan1.data.network.catapi.response.CatItem
 import com.patbeagan1.domain.GetCatUseCase
 import com.patbeagan1.domain.GetSingleCatUseCase
 import com.patbeagan1.domain.entities.EntityCatItem
@@ -13,25 +14,19 @@ class CatRepositoryImpl @Inject constructor(
 
     override suspend fun getCats(): List<EntityCatItem> = catService
         .getCats()
-        .map { catItem ->
-            EntityCatItem(
-                catItem.url ?: "Unknown",
-                catItem.id ?: "Unknown",
-                catItem.url?.let { URL(it) } ?: URL(INVALID_IMAGE)
-            )
-        }
+        .map { it.toEntity() }
 
     override suspend fun getSingleCat(): EntityCatItem = catService
         .getCats(paginationCount = 1, limit = 1)
         .first()
-        .let { catItem ->
-            EntityCatItem(
-                catItem.url ?: "Unknown",
-                catItem.url ?: INVALID_IMAGE,
-                catItem.url?.let { URL(it) } ?: URL(INVALID_IMAGE)
-            )
-        }
+        .toEntity()
 }
+
+private fun CatItem.toEntity() = EntityCatItem(
+    url ?: "Unknown",
+    id ?: "Unknown",
+    url?.let { URL(it) } ?: URL(INVALID_IMAGE)
+)
 
 const val INVALID_IMAGE =
     "https://bitsofco.de/content/images/2018/12/broken-1.png"
