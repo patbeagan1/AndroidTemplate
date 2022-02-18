@@ -8,6 +8,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.patbeagan1.R.layout.activity_main)
+        setContentView(R.layout.activity_main)
     }
 }

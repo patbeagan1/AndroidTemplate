@@ -1,12 +1,12 @@
 package com.patbeagan1.domain
 
-import com.patbeagan1.domain.base.ResultInteractor
+import com.patbeagan1.domain.base.AbstractResultUseCase
 import com.patbeagan1.domain.entities.EntityCatItem
 import javax.inject.Inject
 
 class GetSingleCatUseCase @Inject constructor(
-    val repository: Repository
-) : ResultInteractor<GetSingleCatUseCase.Params, GetSingleCatUseCase.Results>() {
+    private val repository: Repository
+) : AbstractResultUseCase<GetSingleCatUseCase.Params, GetSingleCatUseCase.Results>() {
     class Params
     class Results(val data: EntityCatItem)
 

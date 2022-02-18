@@ -1,4 +1,4 @@
-package com.patbeagan1.di
+package com.patbeagan1.di.util
 
 import android.content.Context
 import androidx.annotation.StringRes

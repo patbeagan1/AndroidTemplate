@@ -43,7 +43,7 @@ class CatViewModel @Inject constructor(
         try {
             var counter = 0
 
-            val catList = catListDataUseCase(GetCatUseCase.Params()).map { result ->
+            val catList = catListDataUseCase(GetCatUseCase.Params(false)).map { result ->
                 result.cats.map { catItem ->
                     CatHolder.ViewModel(
                         catItem.title + counter,

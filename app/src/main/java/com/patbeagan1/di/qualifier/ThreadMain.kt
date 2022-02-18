@@ -1,4 +1,4 @@
-package com.patbeagan1.di.qualifiers
+package com.patbeagan1.di.qualifier
 
 import javax.inject.Qualifier
 

@@ -1,9 +1,9 @@
-package com.patbeagan1.data.network.catapi.response
+package com.patbeagan1.data.network.model
 
 import com.google.gson.annotations.SerializedName
 import java.util.ArrayList
 
-class CatResponse : ArrayList<CatItem>()
+class CatApiModel : ArrayList<CatItem>()
 
 data class CatItem(
     @SerializedName("breeds")

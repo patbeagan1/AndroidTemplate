@@ -1,7 +1,7 @@
-package com.patbeagan1.di.qualifiers
+package com.patbeagan1.di.qualifier
 
 import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class DateFormatDayMonth
+annotation class ThreadIO
