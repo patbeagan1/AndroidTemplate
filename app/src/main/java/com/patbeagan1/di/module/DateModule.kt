@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import java.util.*
+import java.util.Date
 
 @Module
 @InstallIn(ViewModelComponent::class)

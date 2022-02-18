@@ -9,7 +9,7 @@ import javax.inject.Inject
 class GetCatUseCase @Inject constructor(
     private val repository: Repository,
 ) : AbstractResultUseCase<GetCatUseCase.Params, GetCatUseCase.Result>() {
-    data class Params (
+    data class Params(
         val shouldRefresh: Boolean
     )
 

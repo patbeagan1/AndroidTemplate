@@ -15,4 +15,3 @@ class ApiModule {
     fun provideCatApi(resourcesHelper: ResourcesHelper): CatApiImpl =
         CatApiImpl.create(resourcesHelper.getString(R.string.cat_api_key))
 }
-

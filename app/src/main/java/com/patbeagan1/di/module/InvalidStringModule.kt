@@ -1,6 +1,5 @@
 package com.patbeagan1.di.module
 
-import android.content.Context
 import android.net.Uri
 import androidx.core.net.toUri
 import com.patbeagan1.R
@@ -10,8 +9,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import dagger.hilt.android.qualifiers.ActivityContext
-import dagger.hilt.android.qualifiers.ApplicationContext
 import java.net.URL
 
 @Module

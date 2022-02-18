@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.patbeagan1.R
 import com.patbeagan1.di.qualifier.InvalidImage
 import com.patbeagan1.domain.GetSingleCatUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -70,5 +70,3 @@ suspend inline fun <T> MemoryCache<T>.invoke(refresh: Boolean = false, operation
     } else {
         getCachedValue()
     }
-
-
